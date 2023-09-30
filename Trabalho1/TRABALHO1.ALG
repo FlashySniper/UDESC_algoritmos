@@ -24,7 +24,7 @@ Inicio
       leia(dia)
    fimenquanto
    ultimosAlgarismosAno <- ano mod 100 // (1)
-   numChaveAno <- ano \ 4   // (2)
+   numChaveAno <-  ultimosAlgarismosAno div 4   // (2)
    escolha mes  // (3)
    caso 1
       se ((ano mod 4 = 0) e (ano mod 100 <> 0)) ou (ano mod 400 = 0) entao
