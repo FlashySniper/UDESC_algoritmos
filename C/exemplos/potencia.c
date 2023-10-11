@@ -20,6 +20,7 @@
 //		}				
 //	}
 //	printf("Resultado: %.2f\n", z);
+//	return 0;
 //}
 
 int main(int argc, char * argv[]){
@@ -36,4 +37,5 @@ int main(int argc, char * argv[]){
 		y--;
 	}
 	printf("Resultado: %.2f\n", z);
+	return 0;
 }
