@@ -2,14 +2,13 @@
 #include <stdlib.h>
 
 int main(int argc, char * argv[]) {
-  int a, b;
-  int temp; //variavel temporaria
-  int n=2; //contador
-  int mmc=1;
-  int mdc=1;
   int sair; //numero para continuar o loop
   printf("-----MMC e MDC de numeros inteiros-----\n");
   do{
+	int a, b;
+	int n=2; //contador
+	int mmc=1;
+	int mdc=1;
     do{
     printf("Digite o primeiro numero: ");
     scanf("%d", &a);
@@ -38,12 +37,8 @@ int main(int argc, char * argv[]) {
       }	
     }		
   }
-  //mmc = mmc * n;
   printf("MMC: %d\n", mmc);
   printf("MDC: %d\n", mdc);
-  mdc = 1;
-  mmc = 1;
-  n = 2;
   printf("Digite 1 para continuar ou 0 para finalizar o programa: ");
   scanf("%d", &sair);
 }while(sair != 0);
