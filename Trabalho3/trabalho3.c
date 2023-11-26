@@ -20,7 +20,7 @@ int main(int argc, char * argv[]){
 		switch (opcao){
 			case 1:
 				do{
-					printf("[1] - Preencher conjunto A\n[2] - Preencher conjunto B: \n");
+					printf("[1] - Preencher conjunto A\n[2] - Preencher conjunto B \n");
 					scanf("%d", &opcaoB);
 				}while (opcaoB != 1 && opcaoB != 2);
 				switch (opcaoB){
@@ -53,23 +53,19 @@ int main(int argc, char * argv[]){
 
 void armazena_valores(int i, int max, int x[i]){
 	int n, j;
-	int opcaoLocal=0;
-	for(j=i; j<= max; j++){
-		printf("Digite o %do numero do conjunto\n", j);
+	int opcaoLocal =1;
+	do{
+		printf("Digite o %d o numero", i);
 		scanf("%d", &n);
-		for(j=i; j<= max; j++){
-			while(n == x[i]){
-				printf("Digite um numero nao repetido!\n");
-				scanf("%d", &n);
+		for(j=0; j<=i; j++){
+			if(n == x[i]){
+				printf("Este numero ja foi armazenado!\n");		
 			}
 		}
 		x[i] = n;
-		printf("Deseja continuar? 1 - Continuar e 0 - Sair");
+		i = i+1;
+		printf("Deseja continuar?\n 1- Continuar \n 0- Parar");
 		scanf("%d", &opcaoLocal);
-		if (opcaoLocal == 0){
-			break;
-		}	
-	}
-	i=j;
+	}while(opcaoLocal == 0);
 }
 
