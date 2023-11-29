@@ -5,7 +5,7 @@
 #define MAXB 100
 
 int armazena_valores(int i, int max, int x[i]);
-void remove_valores(int i, int max, int x[i]);
+int remove_valores(int i, int max, int x[i]);
 
 int main(int argc, char * argv[]){
 	int a=0, b=0;
@@ -89,7 +89,7 @@ int armazena_valores(int i, int max, int x[i]){
 	return i;
 }
 
-void remove_valores(int i, int max, int x[i]){
+int remove_valores(int i, int max, int x[i]){
 	int j;
 	for(j=i; j>=0; j--){
 		x[j] = 0;			
