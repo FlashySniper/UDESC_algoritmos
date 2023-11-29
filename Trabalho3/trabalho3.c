@@ -92,7 +92,7 @@ int armazena_valores(int i, int max, int x[i]){
 void remove_valores(int i, int max, int x[i]){
 	int j;
 	for(j=i; j>=0; j--){
-				
+		x[j] = 0;			
 	}
 }
 
