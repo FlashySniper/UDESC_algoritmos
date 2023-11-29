@@ -4,11 +4,11 @@
 #define MAXA 50
 #define MAXB 100
 
-void armazena_valores(int i, int max, int x[i]);
-void remove_valores(int i, int max, int x[max]);
+int armazena_valores(int i, int max, int x[i]);
+void remove_valores(int i, int max, int x[i]);
 
 int main(int argc, char * argv[]){
-	int a, b;
+	int a=0, b=0;
 	int vA[MAXA];
 	int vB[MAXB];
 	int opcao = 0;
@@ -25,15 +25,28 @@ int main(int argc, char * argv[]){
 				}while (opcaoB != 1 && opcaoB != 2);
 				switch (opcaoB){
 					case 1: 
-						armazena_valores(a, MAXA, vA);
+						a = armazena_valores(a, MAXA, vA);
 					break;
 					
 					case 2:
-						armazena_valores(b, MAXA, vB);
+						b = armazena_valores(b, MAXA, vB);
 					break;	
 				}
 				break;
 			case 2:
+				do{
+					printf("[1] - Preencher conjunto A\n[2] - Preencher conjunto B \n");
+					scanf("%d", &opcaoB);
+				}while (opcaoB != 1 && opcaoB != 2);
+				switch (opcaoB){
+					case 1: 
+						a = remove_valores(a, MAXA, vA);
+					break;
+					
+					case 2:
+						b = remove_valores(b, MAXA, vB);
+					break;	
+				}
 				break;
 			case 3:
 				break;
@@ -44,28 +57,42 @@ int main(int argc, char * argv[]){
 			case 6:
 				break;
 			default:
-				printf("Essa opção não existe!");
+				printf("Essa opcao nao existe!");
 		}
 	}while(opcao != 7);
 
 	return 0;
 }
 
-void armazena_valores(int i, int max, int x[i]){
+int armazena_valores(int i, int max, int x[i]){
 	int n, j;
-	int opcaoLocal =1;
+	int opcaoLocal = 1;
+	int boolean = 0;
 	do{
-		printf("Digite o %d o numero", i);
+		printf("Digite o %d o numero: ", i);
 		scanf("%d", &n);
 		for(j=0; j<=i; j++){
-			if(n == x[i]){
-				printf("Este numero ja foi armazenado!\n");		
+			if(n == x[j]){
+				printf("Este numero ja foi armazenado!\n");	
+				boolean = 1;	
 			}
 		}
-		x[i] = n;
-		i = i+1;
-		printf("Deseja continuar?\n 1- Continuar \n 0- Parar");
+		if(boolean == 0){
+			x[i] = n;
+			i = i+1;	
+		}else{
+			boolean = 0;
+		}
+		printf("Deseja continuar?\n 1- Continuar \n 0- Parar\n");
 		scanf("%d", &opcaoLocal);
-	}while(opcaoLocal == 0);
+	}while(opcaoLocal != 0);
+	return i;
+}
+
+void remove_valores(int i, int max, int x[i]){
+	int j;
+	for(j=i; j>=0; j--){
+				
+	}
 }
 
