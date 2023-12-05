@@ -8,9 +8,12 @@ int armazena_valores(int i, int max, int x[i]);
 int remove_valores(int i, int max, int x[i]);
 
 int main(int argc, char * argv[]){
-	int a=0, b=0;
+	int a=0, b=0, k=0;
 	int vA[MAXA];
-	int vB[MAXB];
+	int vB[MAXA];
+	int vUniao[MAXB];
+	int	vInterseccao[MAXB];
+	int vDiferenca [MAXA];
 	int opcao = 0;
 	do{
 		int opcaoB = 0;
@@ -49,6 +52,15 @@ int main(int argc, char * argv[]){
 				}
 				break;
 			case 3:
+				printf("Vetor A: \n");
+				for(k=0; k<=a; k++){
+					printf("%d ", vA[k]);
+				}
+				printf("\nVetor B: \n");
+				for(k=0; k<=a; k++){
+					printf("%d ", vB[k]);
+				}
+				printf("\n");
 				break;
 			case 4:
 				break;
@@ -94,5 +106,6 @@ int remove_valores(int i, int max, int x[i]){
 	for(j=i; j>=0; j--){
 		x[j] = 0;			
 	}
+	return i;
 }
 
