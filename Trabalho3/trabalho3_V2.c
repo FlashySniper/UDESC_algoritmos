@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXA 50
+#define MAXA 5
 #define MAXB 100
 
 int armazena_valores(int i, int max, int x[i]);
@@ -154,7 +154,7 @@ int armazena_valores(int i, int max, int x[i]){
   int opcaoLocal = 1;
   int boolean = 0;
   do{
-    if(i > 50){
+    if(i > max){
       printf("Você ficou sem espaço de armazenamento, remova os valores caso queria utilizar esta função novamente");
     }
     printf("Digite o %d o numero: ", i);
