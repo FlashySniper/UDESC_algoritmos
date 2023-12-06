@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #define MAXA 3
-#define MAXB 100
+//#define MAXB 100
 
 int armazena_valores(int i, int max, int x[i]);
 int remove_valores(int i, int max, int x[i]);
@@ -17,13 +17,13 @@ int main(int argc, char * argv[]){
   int opcao = 0;
   do{
     int opcaoB = 0;
-    printf("\n[1] - Insercao de valores \n[2] - Remocao de todos os valores \n[3] - Exibir valores \n[4] - Uniao de conjuntos \n[5] - Intersecção de valores \n[6] - Diferenca de conjuntos \n[7] - Sair\n");
+    printf("\n[1] - Insercao de valores \n[2] - Remocao de todos os valores \n[3] - Exibir valores \n[4] - Uniao de conjuntos \n[5] - Interseccao de valores \n[6] - Diferenca de conjuntos \n[7] - Sair\n");
     printf("Selecione a opcao que deseja utilizar: ");
     scanf("%d", &opcao);
     switch (opcao){
       case 1:
         do{
-          printf("[1] - Preencher conjunto A\n[2] - Preencher conjunto B \n");
+          printf("\n[1] - Preencher conjunto A\n[2] - Preencher conjunto B \n");
           scanf("%d", &opcaoB);
         }while (opcaoB != 1 && opcaoB != 2);
         switch (opcaoB){
@@ -38,7 +38,7 @@ int main(int argc, char * argv[]){
         break;
       case 2:
         do{
-          printf("[1] - Excluir conjunto A\n[2] - Excluir conjunto B \n");
+          printf("\n[1] - Excluir conjunto A\n[2] - Excluir conjunto B \n");
           scanf("%d", &opcaoB);
         }while (opcaoB != 1 && opcaoB != 2);
         switch (opcaoB){
@@ -71,8 +71,8 @@ int main(int argc, char * argv[]){
         printf("\n\n");
         break;
       case 4:
-        if(a == 0 && b == 0){
-          printf("Conjunto vazio\n");
+        if(a == 0 || b == 0){
+          printf("A uniao nao pode ser realizada com um conjunto vazio\n");
           break;
         }
         if(a >= b){
@@ -80,17 +80,23 @@ int main(int argc, char * argv[]){
         }else{
           iMaior = b;
         }
-        printf("\nVetor C: \n");
+        printf("\nVetor Uniao: \n");
         for(k=0; k<iMaior; k++){
           printf("%d %d ", vA[k], vB[k]);
         }
         break;
       case 5:
-        if(a >= b){
-          iMaior = a;
-        }else{
-          iMaior = b;
-        }
+        if(a==0 || b==0){
+        	printf("\nA interseccao nao pode ser realizada com um conjunto vazio\n");
+        	break;
+		}else{
+			if(a >= b){
+          		iMaior = a;
+        	}else{
+          		iMaior = b;
+        	}
+		}
+		printf("\nVetor interseccao: \n");
         for(k=0; k<iMaior; k++){
           for(m=0; m<iMaior; m++){
             if(vA[k] == vB[m]){
@@ -155,7 +161,7 @@ int armazena_valores(int i, int max, int x[i]){
   int boolean = 0;
   do{
     if(i >= max){
-      printf("Você ficou sem espaço de armazenamento, remova os valores caso queria utilizar esta função novamente");
+      printf("Voce ficou sem espaco de armazenamento, remova os valores caso queria utilizar esta funcao novamente\n");
       break;
     }else{
       printf("Digite o %d o numero: ", i);
@@ -181,9 +187,9 @@ int armazena_valores(int i, int max, int x[i]){
 
 int remove_valores(int i, int max, int x[i]){
   int j;
-  for(j=i; j>0; j--){
+  for(j=i; j>=0; j--){
     x[j] = 0;			
-    i = i-1;
   }
+  i=0;
   return i;
 }
