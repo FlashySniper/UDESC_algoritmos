@@ -75,7 +75,12 @@ int main(int argc, char * argv[]){
           printf("A uniao nao pode ser realizada com um conjunto vazio\n");
           break;
         }
-
+		for(k=0; k<=a; k++){
+			vUniao[k] = vA[k];
+		}
+		for(k; k<=b; k++){
+			if(!())
+		}
         printf("\nVetor Uniao: \n");
         for(k=0; k<a; k++){
           printf("%d %d ", vA[k], vB[k]);
@@ -106,11 +111,7 @@ int main(int argc, char * argv[]){
               printf("Conjunto vazio\n");
               break;
             }
-            if(a >= b){
-              iMaior = a;
-            }else{
-              iMaior = b;
-            }
+ 
             printf("Vetor A - Vetor B: \n");
             for(k=0; k<iMaior; k++){
               printf("%d ", (vA[k] - vB[k]));
